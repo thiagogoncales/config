@@ -138,12 +138,12 @@ alias rmpyc="find . -name '*.pyc' | xargs rm"
 if command -v pyenv 1>/dev/null 2>&1; then
     eval "$(pyenv init -)"
 fi
-#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 
 export NVM_DIR="$HOME/.nvm"
 function nvm() {
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-    nvm_version=$(cat .nvm)
-    nvm use $nvm_version
+    nvm use
     [[ "$#" -gt 0 ]] && nvm "$@"
 }
