@@ -132,6 +132,9 @@ autocmd FileType c set ts=4|set sw=4|set noexpandtab
 autocmd FileType java set wrap|set colorcolumn=
 autocmd FileType javascript set wrap|set tabstop=4|set shiftwidth=4|set softtabstop=4|set colorcolumn=100|set expandtab
 autocmd FileType html set wrap|set tabstop=2|set shiftwidth=2|set softtabstop=2|set colorcolumn=|set expandtab
+autocmd FileType cs set tabstop=4|set shiftwidth=4|set softtabstop=4|set expandtab
+autocmd FileType csproj set tabstop=4|set shiftwidth=4|set softtabstop=4|set expandtab
+autocmd FileType markdown set wrap
 autocmd BufNewFile,BufRead *.lib set syntax=txt 
 autocmd BufNewFile,BufRead *.feature set wrap
 
@@ -172,6 +175,7 @@ autocmd BufWrite *.java :call DWS()
 autocmd BufWrite *.js :call DWS()
 autocmd BufWrite *.feature :call DWS()
 autocmd BufWrite *.scss :call DWS()
+autocmd BufWrite *.cs :call DWS()
 
 " Fix saving issues
 :ca WQ wq
